@@ -257,8 +257,6 @@ python-weather==2.0.3
 pyttsx3==2.90
 pytweening==1.2.0
 pytz==2024.1
-pywin32
-pywin32-ctypes
 PyYAML==6.0.1
 pyzmq==26.0.3
 qrcode==7.4.2
