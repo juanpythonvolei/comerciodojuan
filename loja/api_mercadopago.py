@@ -3,12 +3,8 @@ import mercadopago.sdk
 from dotenv import load_dotenv
 import os
 load_dotenv()
-public_key='APP_USR-2e356ce7-212f-441f-a772-93ded887ed2d'
-token = 'APP_USR-4617851042682155-090114-d6030456905af64bfe0c1bf248822567-1970432507'
-public_key = f'{public_key}'
-token = f'{token}'
-print(public_key)
-print(token)
+public_key=f"{os.getenv('PUBLIC_KEY')"
+token = f"{os.getenv('TOKEN')"
 def criar_pagamento(itens_pedido,link):
     sdk = mercadopago.SDK(token)
     itens = []
