@@ -22,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p+(97%aqf5&hq23tl4^f#g8e5l89fh#*)-lu5q@prfkt3oa4dt'
+SECRET_KEY = f"{os.getenv('SECRET_KEY')"
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,19 +83,19 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("External Database URL")
 
 if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)
     }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
 
 
 
@@ -156,7 +158,7 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = "juanpablozonho@gmail.com"
+EMAIL_HOST_USER = f"{os.getenv('EMAIL_HOST_USER')"
 
-EMAIL_HOST_PASSWORD  = f'ibdlxbnrjwczltuo'
+EMAIL_HOST_PASSWORD  = f"{os.getenv('EMAIL_HOST_PASSWORD')"
 
