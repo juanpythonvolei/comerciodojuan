@@ -127,7 +127,6 @@ idna==2.10
 imageio==2.34.1
 imbox==0.9.8
 importlib_metadata==7.1.0
-ipython==8.12.3
 isodate==0.6.1
 itsdangerous==2.2.0
 jaraco.classes==3.4.0
