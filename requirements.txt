@@ -119,7 +119,6 @@ hstspreload==2024.6.1
 httpcore==0.9.1
 httplib2==0.22.0
 httptools==0.6.1
-httpx==0.13.3
 humanfriendly==10.0
 hupper==1.12.1
 hyperframe==5.2.0
