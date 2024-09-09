@@ -1,1 +1,0 @@
-web: PYTHONPATH=/ecommerce/ gunicorn ecommerce.wsgi
