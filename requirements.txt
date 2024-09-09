@@ -3,3 +3,4 @@ Django==5.0.8
 mercadopago==2.2.3
 python-dotenv==1.0.1
 whitenoise
+gunicorn
