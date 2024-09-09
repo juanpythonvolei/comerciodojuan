@@ -1,1 +1,1 @@
-web: gunicorn ecommerce.wsgi
+web: PYTHONPATH=/comerciodojuan/ecommerce/gunicorn ecommerce.wsgi
