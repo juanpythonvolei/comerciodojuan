@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 public_key=f"{os.getenv('PUBLIC_KEY')"
-token = f"{os.getenv('TOKEN')"
+token = f"{os.getenv('TOKEN')}"
 def criar_pagamento(itens_pedido,link):
     sdk = mercadopago.SDK(token)
     itens = []
